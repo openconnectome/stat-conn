@@ -1,0 +1,22 @@
+# Fdb version 3
+["bibtex stat-conn"] 1409359641 "stat-conn.aux" "stat-conn.bbl" "stat-conn" 1409359646
+  "../../../../other/latex/library.bib" 1409359498 11579994 271e0a060e6d786a9a050ef9963b4f09 ""
+  "/usr/local/texlive/2014/texmf-dist/bibtex/bst/IEEEtran/IEEEtran.bst" 1222816716 59506 016987d9be15acf51cdd7252d40ecec2 ""
+  "stat-conn.aux" 1409359645 3194 81799b8078f8640bc7b4b8a233297113 ""
+  "stat-conn.bcf" 0 -1 0 ""
+  (generated)
+  "stat-conn.blg"
+  "stat-conn.bbl"
+["pdflatex"] 1409359644 "stat-conn.tex" "stat-conn.pdf" "stat-conn" 1409359646
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls" 1399675188 20496 66dd832c447553f6776fbeac03bb0580 ""
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/base/leqno.clo" 1399675188 1747 511c162405d1e8aa3c7aa08c9328125a ""
+  "/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo" 1399675188 8967 546f1b177fd18efd7ad74d77a7bdac64 ""
+  "stat-conn.aux" 1409359645 3194 81799b8078f8640bc7b4b8a233297113 ""
+  "stat-conn.bbl" 1409359644 9135 83ffe8207e9360a9d80ba73e30ec6aac "bibtex stat-conn"
+  "stat-conn.tex" 1409359634 5144 24e8fdb42d4c935fe963e6fe360e38ab ""
+  "stat-conn.toc" 1409359645 1755 1df811878d5258b034d2e6a7f5402871 ""
+  (generated)
+  "stat-conn.toc"
+  "stat-conn.aux"
+  "stat-conn.log"
+  "stat-conn.pdf"

@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: stat-conn.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: ../../../../other/latex/library.bib
+Warning--I didn't find a database entry for "Gutmann82a"
+Warning--I didn't find a database entry for "Durante14a"
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in Lee13a
+Warning--empty journal in Lee14a
+Warning--empty journal in Lee14b
+Warning--empty year in Koutra2014
+Warning--empty year in sgm-jofc
+
+Done.
+You've used 20 entries,
+            4039 wiz_defined-function locations,
+            960 strings with 14590 characters,
+and the built_in function-call counts, 17704 in all, are:
+= -- 1304
+> -- 790
+< -- 86
++ -- 399
+- -- 178
+* -- 977
+:= -- 2614
+add.period$ -- 40
+call.type$ -- 20
+change.case$ -- 20
+chr.to.int$ -- 177
+cite$ -- 25
+duplicate$ -- 1254
+empty$ -- 1248
+format.name$ -- 197
+if$ -- 3992
+int.to.chr$ -- 0
+int.to.str$ -- 20
+missing$ -- 287
+newline$ -- 117
+num.names$ -- 20
+pop$ -- 726
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1288
+stack$ -- 0
+substring$ -- 478
+swap$ -- 1059
+text.length$ -- 27
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 20
+warning$ -- 5
+while$ -- 51
+width$ -- 22
+write$ -- 255
+(There were 7 warnings)

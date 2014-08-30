@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {section}{\numberline {2}One Sample Tests}{2}
+\contentsline {subsection}{\numberline {2.1}tests for independence between connectivity and vertex attributes (such as direction preference, excitatory vs. inhibitory, etc.)}{2}
+\contentsline {subsection}{\numberline {2.2}tests for independence between space and connectivity}{2}
+\contentsline {subsection}{\numberline {2.3}tests for model fit}{2}
+\contentsline {section}{\numberline {3}2-sample tests for comparative connectomics}{2}
+\contentsline {subsection}{\numberline {3.1}comparing 2 different connectomes}{2}
+\contentsline {subsection}{\numberline {3.2}2 populations of connectomes}{2}
+\contentsline {section}{\numberline {4}population density estimation}{2}
+\contentsline {subsection}{\numberline {4.1}mean estimation}{2}
+\contentsline {subsection}{\numberline {4.2}robust mean (eg, median, or Lq) estimation}{3}
+\contentsline {subsection}{\numberline {4.3}Clustering}{3}
+\contentsline {subsection}{\numberline {4.4}errorbars around mean estimation, eg, estimation variance}{3}
+\contentsline {section}{\numberline {5}connectome coding}{3}
+\contentsline {subsection}{\numberline {5.1}classifying connectomes}{3}
+\contentsline {subsection}{\numberline {5.2}regressing connectomes}{3}
+\contentsline {subsection}{\numberline {5.3}multivariate regression for connectomes}{3}
+\contentsline {section}{\numberline {6}Discussion}{3}
+\contentsline {subsection}{\numberline {6.1}bias variance trade-off: num params $>$ num subjects}{3}
+\contentsline {subsection}{\numberline {6.2}nuisance signals: age, sex, batch}{3}
+\contentsline {subsection}{\numberline {6.3}Graph Matching}{3}
+\contentsline {subsection}{\numberline {6.4}Future Work}{3}
