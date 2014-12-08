@@ -1,0 +1,201 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fullpage,times,subfigure,fancyhdr}
+\usepackage{amsfonts,amsmath,amssymb,amsthm}
+\usepackage{subfigure,sidecap,wrapfig}
+\usepackage{algorithm,algorithmic}
+\usepackage{textcomp}
+\usepackage{verbatim}
+\usepackage{times}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{mdwlist}
+\usepackage{xspace}
+\usepackage{pict2e}
+\usepackage{paralist}
+\usepackage{multicol}
+\usepackage{lettrine}
+\usepackage[pdftex]{color}
+\usepackage[pdftex]{graphicx}
+\usepackage[colorlinks=true,pagebackref,linkcolor=magenta]{hyperref}
+\usepackage[sort&compress,comma,round,numbers]{natbib}
+\usepackage[nottoc,numbib]{tocbibind}
+% \usepackage{cite}
+% \usepackage{trackchanges}
+% \usepackage{mcode}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% page style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\oddsidemargin=-0.5in 
+\evensidemargin=-0.5in
+\textwidth=7.5in 
+\headwidth=7.5in
+\textheight=9.0in 
+\headheight=0.5pt
+\topmargin=-0.5in
+\headsep=0.5in
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% section stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \numberwithin{figure}{section}
+% \numberwithin{table}{section}
+% \numberwithin{algorithm}{section}
+\newcommand{\para}[1]{\vspace{3pt}\noindent{{\fontsize{11pt}{1em} \bf #1}}}
+\newcommand{\subpara}[1]{\vspace{3pt}\noindent{{\fontsize{11pt}{1em} \bf \emph{#1}}}}
+\newcommand{\subsubpara}[1]{\vspace{3pt}\noindent{{\fontsize{10pt}{1em} \emph{#1}}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{MyGray}{rgb}{0.7,0.7,0.7}
+\newcommand{\youngser}[1]{{\color{green}{\it youngser: #1}}}
+\newcommand{\brett}[1]{{\color{blue}{\it brett says: #1}}}
+\newcommand{\jovo}[1]{{\color{magenta}{\it JoVo: #1}}}
+\newcommand{\rb}[1]{{\color{red}{\it rb: #1}}}
+
+\providecommand{\tg}[1]{\textcolor{green}{#1}}
+\providecommand{\tb}[1]{\textcolor{blue}{#1}}
+\providecommand{\tr}[1]{\textcolor{red}{#1}}
+\providecommand{\tk}[1]{\textcolor{black}{#1}}
+\providecommand{\tw}[1]{\textcolor{white}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% bold, vec, tilde 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand{\ve}[1]{\boldsymbol{#1}}
+\providecommand{\ms}[1]{\mathsf{#1}}
+\providecommand{\mc}[1]{\mathcal{#1}}
+\providecommand{\mb}[1]{\boldsymbol{#1}}
+\providecommand{\mbb}[1]{\mathbb{#1}}
+\providecommand{\mv}[1]{\vec{#1}}
+\providecommand{\mh}[1]{\hat{#1}}
+\providecommand{\wh}[1]{\widehat{#1}}
+\providecommand{\mhv}[1]{\mh{\mv{#1}}}
+\providecommand{\mvh}[1]{\mv{\mh{#1}}}
+\providecommand{\mt}[1]{\widetilde{#1}}
+\providecommand{\mhc}[1]{\hat{\mathcal{#1}}}
+\providecommand{\mbc}[1]{\mb{\mathcal{#1}}}
+\providecommand{\mvc}[1]{\mv{\mathcal{#1}}}
+\providecommand{\mtc}[1]{\widetilde{\mathcal{#1}}}
+\providecommand{\mth}[1]{\mt{\mh{#1}}}
+\providecommand{\mht}[1]{\mh{\mt{#1}}}
+\providecommand{\mhb}[1]{\hat{\boldsymbol{#1}}}
+\providecommand{\whb}[1]{\widehat{\boldsymbol{#1}}}
+\providecommand{\mvb}[1]{\vec{\boldsymbol{#1}}}
+\providecommand{\mtb}[1]{\widetilde{\boldsymbol{#1}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% theta 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bth}{\ve{\theta}}
+\newcommand{\hth}{\mh{\theta}}
+\newcommand{\wht}{\widehat{\theta}}
+\newcommand{\vth}{\vec{\theta}}
+\newcommand{\tbth}{\tilde{\bth}}
+\newcommand{\wtt}{\widetilde{\theta}}
+\newcommand{\hbth}{\mh{\bth}}
+\newcommand{\hvth}{\widehat{\vth}}
+\newcommand{\bTh}{\ve{\Theta}}
+\newcommand{\vTh}{\ve{\Theta}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% greek shortcuts 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\del}{\delta}
+\newcommand{\sig}{\sigma}
+\newcommand{\lam}{\lambda}
+\newcommand{\gam}{\gamma}
+\newcommand{\eps}{\varepsilon}
+
+\newcommand{\Del}{\Delta}
+\newcommand{\Sig}{\Sigma}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\Gam}{\Gamma}
+
+\newcommand{\bSig}{\ve{\Sigma}}
+\newcommand{\bmu}{\ve{\mu}}
+\newcommand{\bal}{\ve{\alpha}}
+\newcommand{\bpi}{\ve{\pi}}
+\newcommand{\bkap}{\ve{\kappa}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% math unary operators 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\providecommand{\norm}[1]{\left \lVert#1 \right  \rVert}
+\providecommand{\deter}[1]{\lvert #1 \rvert}
+\providecommand{\abs}[1]{\left \lvert #1 \right \rvert}
+\providecommand{\mat}[1]{\left[ #1 \right]}
+\newcommand{\trace}[1]{{\ensuremath{\operatorname{tr}\!\left(#1\right)}}}           % :
+
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+\newcommand{\T}{^{\ensuremath{\mathsf{T}}}}           % transpose
+\newcommand{\from}{{\ensuremath{\colon}}}           % :
+\newcommand{\iid}{\overset{iid}{\sim}}
+\newcommand{\niid}{\overset{iid}{\nsim}}
+\DeclareMathOperator*{\minimize}{\mathrm{minimize}}
+\DeclareMathOperator*{\maximize}{\mathrm{maximize}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% math binary operators 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\wconv}{\overset{i.p.}{\rightarrow}}
+\newcommand{\sconv}{\overset{i.p.}{\rightarrow}}
+\newcommand{\conv}{\rightarrow}
+\newcommand{\pconv}{\overset{p}{\conv}}
+\newcommand{\eqdef}{\overset{\triangle}{=}}
+\newcommand{\defn}{\overset{\triangle}{=}}
+\newcommand{\defeq}{\overset{\triangle}{=}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% floats
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\floatname{algorithm}{Pseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\newtheorem{rem}{Remark}%[section]
+\newtheorem{Alg}{Algorithm}%[section]
+\newtheorem{thm}{Theorem}
+\newtheorem{lem}{Lemma}
+\newtheorem{Thm}{Theorem}[section]
+\newtheorem{Lem}{Lemma}%[section]
+\newtheorem{defi}{Definition}
+\newtheorem{Def}{Definition}[section]
+\newtheorem{prop}{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{claim}{Claim}
+\newtheorem{conj}{Conjecture}
+\newtheorem{model}{Model}
+\newtheorem{ex}{Exercise}%[section]
+\newtheorem{question}{Question}
+\newtheorem{task}{Task}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% common shortcuts 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\knn}{$k$NN}
+\newcommand{\svd}{\sct{svd}}
+\newcommand{\eig}{\sct{eig}}
+\newcommand{\qr}{\sct{qr}}
+\newcommand{\Real}{\mathbb{R}}
+
+\providecommand{\sct}[1]{{\sc \texttt{#1}}}
+\newcommand{\msl}{{\sc Idt}}
+\newcommand{\elegans}{\emph{C. elegans} }
+\newcommand{\FAQ}{\texttt{FAQ} }

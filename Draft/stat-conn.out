@@ -1,0 +1,25 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Background}{}% 2
+\BOOKMARK [1][-]{section.3}{One Sample Tests}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{tests for model fit}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{tests for independence between connectivity and vertex attributes \(such as direction preference, excitatory vs. inhibitory, etc.\)}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{tests for independence between space and connectivity}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{2-sample tests for comparative connectomics}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{comparing 2 different connectomes}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{2 populations of connectomes}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Connectome Unsupervised Learning}{}% 10
+\BOOKMARK [2][-]{subsection.5.1}{mean estimation}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.2}{robust mean \(eg, median, or Lq\) estimation}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.3}{Clustering}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.4}{errorbars around mean estimation, eg, estimation variance}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.5}{Canonical Cortical Circuits}{section.5}% 15
+\BOOKMARK [1][-]{section.6}{connectome coding}{}% 16
+\BOOKMARK [2][-]{subsection.6.1}{classifying connectomes}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.2}{regressing connectomes}{section.6}% 18
+\BOOKMARK [2][-]{subsection.6.3}{multivariate regression for connectomes}{section.6}% 19
+\BOOKMARK [1][-]{section.7}{Discussion}{}% 20
+\BOOKMARK [2][-]{subsection.7.1}{bias variance trade-off: num params > num subjects}{section.7}% 21
+\BOOKMARK [2][-]{subsection.7.2}{nuisance signals: age, sex, batch}{section.7}% 22
+\BOOKMARK [2][-]{subsection.7.3}{Graph Matching}{section.7}% 23
+\BOOKMARK [2][-]{subsection.7.4}{Future Work}{section.7}% 24
+\BOOKMARK [1][-]{section.8}{Bibliography}{}% 25

@@ -21,13 +21,16 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{Bock2011}
+\bibitem{hastie2004elements}
+T.~Hastie, R.~Tibshirani, and J.~Friedman, ``{The Elements of Statistical
+  Learning: Data Mining, Inference, and Prediction},'' \emph{BeiJing:
+  Publishing House of Electronics Industry}, 2004.
+
+\bibitem{Rice1995}
 \BIBentryALTinterwordspacing
-D.~D. Bock, W.-C.~A. Lee, A.~M. Kerlin, M.~Andermann, A.~W. Wetzel,
-  S.~Yurgenson, E.~R. Soucy, H.~S. Kim, G.~Hood, and R.~C. Reid, ``{Network
-  anatomy and in vivo physiology of visual cortical neurons},'' \emph{Nature},
-  vol. 471, no. 7337, pp. 177--182, Mar. 2011. [Online]. Available:
-  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3095821\&tool=pmcentrez\&rendertype=abstract}
+J.~A. Rice, \emph{{Mathematical statistics and data analysis}}.\hskip 1em plus
+  0.5em minus 0.4em\relax Duxbury Press, 1995. [Online]. Available:
+  \url{http://www.citeulike.org/user/tarjeiha/article/1691927}
 \BIBentrySTDinterwordspacing
 
 \bibitem{Takemura2013}
@@ -40,6 +43,15 @@ S.-Y. Takemura, A.~Bharioke, Z.~Lu, A.~Nern, S.~Vitaladevuni, P.~K. Rivlin,
   suggested by Drosophila connectomics},'' \emph{Nature}, vol. 500, no. 7461,
   pp. 175--181, Aug. 2013. [Online]. Available:
   \url{http://dx.doi.org/10.1038/nature12450}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Bock2011}
+\BIBentryALTinterwordspacing
+D.~D. Bock, W.-C.~A. Lee, A.~M. Kerlin, M.~Andermann, A.~W. Wetzel,
+  S.~Yurgenson, E.~R. Soucy, H.~S. Kim, G.~Hood, and R.~C. Reid, ``{Network
+  anatomy and in vivo physiology of visual cortical neurons},'' \emph{Nature},
+  vol. 471, no. 7337, pp. 177--182, Mar. 2011. [Online]. Available:
+  \url{http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=3095821\&tool=pmcentrez\&rendertype=abstract}
 \BIBentrySTDinterwordspacing
 
 \bibitem{Varshney2011}
@@ -82,6 +94,14 @@ B.~M. Johnson, ``\BIBforeignlanguage{EN}{{On the Admissible Estimators for
   Annals of Mathematical Statistics}}, vol.~42, no.~5, pp. 1579--1587, Oct.
   1971. [Online]. Available:
   \url{http://projecteuclid.org/euclid.aoms/1177693156}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Gutmann82a}
+\BIBentryALTinterwordspacing
+S.~Gutmann, ``\BIBforeignlanguage{EN}{{Stein's Paradox is Impossible in
+  Problems with Finite Sample Space}},'' \emph{\BIBforeignlanguage{EN}{The
+  Annals of Statistics}}, vol.~10, no.~3, pp. 1017--1020, Sep. 1982. [Online].
+  Available: \url{http://projecteuclid.org/euclid.aos/1176345893}
 \BIBentrySTDinterwordspacing
 
 \bibitem{MIGRAINE}
@@ -147,6 +167,13 @@ D.~Koutra, J.~T. Vogelstein, and C.~Faloutsos, ``{DeltaCon: Measuring
 D.~Koutra, N.~Shah, J.~T. Vogelstein, B.~J. Gallagher, and C.~Faloutsos,
   ``{DELTACON: A Principled Massive-Graph Similarity Function and
   Applications},'' \emph{in preparation}.
+
+\bibitem{Durante14a}
+\BIBentryALTinterwordspacing
+D.~Durante, D.~B. Dunson, and J.~T. Vogelstein, ``{Nonparametric Bayes Modeling
+  of Populations of Networks},'' Jun. 2014. [Online]. Available:
+  \url{http://arxiv.org/abs/1406.7851}
+\BIBentrySTDinterwordspacing
 
 \bibitem{signal-subgraph}
 \BIBentryALTinterwordspacing

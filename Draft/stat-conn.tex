@@ -1,0 +1,182 @@
+\documentclass[final,leqno]{article}
+\input{preamble}
+
+
+\title{\vspace{-50pt}Statistical Connectomics}
+
+
+\author{some, \and jovo\thanks{yummy}, \and other
+        \and cep\thanks{t}, \and souls}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\begin{abstract}
+
+\end{abstract}
+
+
+\pagestyle{myheadings}
+\thispagestyle{plain}
+
+\clearpage
+\section{Introduction}
+
+% additional core authors: runze? 
+% potential additional graphstat authors: li? nam? youngser? daniele, dunson, vince,  minh, daniel
+
+potential neuro co-authors could include: 
+mike milham, scott cook, mitya, bobby/jeff, clay/davi, rex jung, 
+
+we start by stating how important connectomics will be for the future of neuroscience, and how having rigorous statistical theory will enable future investigations to leverage it to substantiate their claims.
+
+for each exploitation task, we provide: 
+\begin{enumerate}
+\item rigorous definition
+\item motivating application
+\item R code
+\item images, graphs, and graph derivatives downloads
+\end{enumerate}
+
+
+\section{Background}
+
+In classical Euclidean statistics, we we obtain $n$ data points, $\mb{x}_1,\ldots, \mb{x}_n$.  To perform \emph{any} statistical inference, fundamental to any scientific inquiry, we (sometimes implicitly) make a number of assumptions.   First, we assume  each observation is a realization of a random variable that has some distribution, $F$ which is an element of a family of distributions, $\mc{F}$.  For example, a data point might be $d$-dimensional vectors, $\mb{x}_i \in \Real^d$, $F$ could be a multivariate Gaussian distribution, $F=\mc{N}_d(\mb{\mu},\mb{\Sigma})$, and $\mc{F}$ could be the set of all possible $d$-dimensional Gaussian distributions, $\mc{F}=\{\mc{N}_d(\mb{\mu},\mb{\Sigma}) : \mb{\mu} \in \Real^d, \mb{\Sigma} \in \Xi_d \}$, where $\Xi_d$ denotes the set of $d \times d$ dimensional covariance matrices.  Second, we assume that each data point, $\mb{x}_i$
+ is sampled independently and indentically $(iid)$ from $F$. We denote these assumptions by writing $\mb{x}_i \iid F \in \mc{F}$. 
+
+ The collection of data points, $\mc{D}_n=\{\mb{x}_1,\ldots,\mb{x}_n\}$, sometimes referred to as a point cloud, is the object upon which all statistical inference follows,  including one-sample tests and unsupervised learning tasks such as mean and quantile estimation, clustering, and vector quantization.  Sometimes, associated with each $x_i$, we know something else about instance $i$, which we denote $y_i$, yielding $n$ tuples, $\mc{D}_n = \{(\mb{x}_1,y_1),\ldots, (\mb{x}_n,y_n)\}$.  The $y_i$'s could denote which condition $x_i$ was observed under, which population instance $i$ comes from, etc.  In such settings, $y_i \in \{\mt{y}_1,\ldots,\mt{y}_C\}$ is a categorical random variable, and inference tasks of interest include 2-/multi-sample testing, and classification.  If the $y_i$'s are continuous valued, then $y_i \in \Real$, then we have regression problems, and if $y_i$'s are multivariate, then we have multivariate regression.  
+
+As mentioned above, many of the classical tests and estimation procedures assume that  $\mc{D}_n$ is a collection of $iid$ samples.  In connectomics, $\mc{D}_n$ is \emph{not} that, rather $\mc{D}_n$ is a network (or graph), $G$ with $n$ nodes (or vertices) and up to $n^2$ links (or edges, arcs).  We can think of a graph as a tuple, $G=(V,E)$, where $V$ is the set of $n$ nodes, and $E$ is the set of up to $n^2$ edges.  Thus, a graph, like a point cloud, is a collection of objects.  However, unlike a typical point cloud, it does not make much sense to assume objects are sampled identically and independently, except for the simplest possible random graph model.  For some random graph models, we think of edges as the random variables, and assume that some are independent, but not identically sampled.  Alternately, for other random graph models, we think of the vertices as random variables, and we may assume they are sampled $iid$, but we do not ``see'' the vertices, rather, we only see edges amongst the vertices.  In this case, we posit the existence of latent (hidden) variables associated with each vertex.  Thus, all the random graph models that we will use, our assumptions will have to relax either independence, identical, or introduce latent variables.  This is similar in spirit to time-series and spatial modeling, where the independence assumptions break down.
+
+A side-effect of relaxing the fundamental assumptions underlying our data analysis is that neither the theoretical guarantees that motivate  the beloved procedures we learned from classic texts such as \cite{hastie2004elements} or \cite{Rice1995}, nor the codes we have from MATLAB or R make sense out of the box.  In this manuscript, we describe theoretically justified modifications/generalizations of all the above mentioned inference tasks.  Moreover, we provide datasets and example code for implementing these procedures in R.  We hope this helps to foster a growing community of methods and applications to this emerging field of statistical connectomics.
+
+\section{One Sample Tests}
+
+A classical one sample test is defined as followed: Given $\mc{D}_n$, test whether $x_i \iid F$, for some given F.  For example, imagine that we want to test whether $\mc{D}_n$ is a sample from a mixture of two multivariate Gaussians. Let $\mc{N}_d(\mb{\mu}_j,\mb{\Sigma}_j)$ denote a $d$-dimensional Gaussian distribution with mean $\mb{\mu}_j$ and covariance $\mb{\Sigma}_j$, and let $\omega_j$ be the weight of Gaussian $j$, where each $\omega_j \geq 0$ and $\sum_j \omega_j=1$.  Let $\mc{H}_0$ denote the set of mixtures of two $d$-dimensional Gaussians, and let $\mc{H}_A$ denote all other distributions.  We can therefore define the one-sample test:
+
+\begin{align}
+H_0 \from & \mb{x}_1,\ldots,\mb{x}_n \iid F \in \mc{H}_0  \\
+H_A \from & \mb{x}_1,\ldots,\mb{x}_n \iid F' \in \mc{H}_A,
+\end{align}
+\noindent To conduct this test, we must first choose a test-statistic, $T_n(\mb{x}_1,\ldots,\mb{x}_n)$, to measure the goodness-of-fit of the data to the model, and a way of estimating the null distribution.  We choose likelihood, and adopt a parametric bootstrap to estimate the null distribution.  The likelihood of a data point, given a distribution $F$, is denoted, $\ell(x_1; F)$.  Let the likelihood of $x_i$ being sampled from the $j^{th}$ Gaussian distribution be $\phi_j(x_i)=(2\pi)^{-d/2} | \mb{\Sigma}|^{-1/2} \exp ( -\frac{1}{2} \big(x_i - \mu)\T \mb{\Sigma}^{-1}(x_i-\mu)\big)$. For $n$ samples, each sampled independently and identically from the same distribution, the likelihood of the dataset is given simply by $\ell(\mc{D}_n; F) = \prod_i^n \ell(x_i; F)$. The steps of a parametric boostrap under a Gaussian mixture model are described in Pseudocode \ref{alg:1}.
+
+\begin{algorithm} 
+\caption{Parametric bootstrap test for a mixture of Gaussians} 
+\label{alg:1}
+\begin{algorithmic}[1]
+\REQUIRE $\{X_1,\ldots,X_n\}$
+\ENSURE p-value
+\STATE Obtain an estimate $\mh{F}$ of the Gaussian mixture model (say, using \texttt{mclust})
+\STATE Compute the likelihood of the observed data, given the estimated model, $\ell(\mc{D}_n;\mh{F})$.
+\FOR{$i \in \{1,2,\ldots,1000\}$} 
+\STATE Sample $\mc{D}_n^{(i)}$, that is, $n$ samples from $\mh{F}$
+\STATE Compute $\ell^{(i)}(\mc{D}^{(i)}_n;\mh{F})$
+\ENDFOR
+\STATE Compute, $\mh{F}_{\ell}$, empirical cumulative distribution of $\ell^{(i)}$
+\STATE Let p-value equal $F_{\ell}(\ell(\mc{D}_n; \mh{F}))$
+\end{algorithmic} 
+\end{algorithm}
+
+The homologue of this test for connectomics is the following.  Given a connectome, represented purely by its vertex set and connectivity structure, $G=(V,E)$, where $G$ is a graph comprised of an vertex set $V$ and a set of edges amongst them $E$, we desire to determine
+\begin{align}
+H_0 \from & G \sim F \in \mc{H}_0 \\
+H_A \from & G \sim F' \in \mc{H}_A,
+\end{align}
+
+
+\subsection{tests for model fit}
+
+hsbm on fly optic lobe data \cite{Takemura2013} or c elegans.
+
+
+\subsection{tests for independence between connectivity and vertex attributes (such as direction preference, excitatory vs. inhibitory, etc.)}
+
+bock11 \cite{Bock2011} dataset, testing independence of tuning direction vs connectivity, using residual error of regression o ase as test statistic, permutation test to obtain null
+
+\subsection{tests for independence between space and connectivity}
+
+kasthuri11 dataset (no cite yet, coming soon), touches vs. synapses, using whatever we do (probably importance sampling to obtain null distribution)
+
+
+
+\section{2-sample tests for comparative connectomics}
+
+\subsection{comparing 2 different connectomes}
+
+elegans electrical vs. chemical \& elegans vs. pacificus \& elegans male vs. herm.  See \cite{Varshney2011} for the most clear description of these graphs.
+
+
+\subsection{2 populations of connectomes}
+
+\cite{Nooner2012,Landman2010} describes two different populations of subjects collected for two different studies, both of which are useful.
+
+\section{Connectome Unsupervised Learning}
+
+\subsection{mean estimation}
+
+\cite{Johnson71a,Gutmann82a} are two papers proving that Stein's paradox does not occur in finite spaces, in other words, $\bar{A}$ is admissible under squared error loss.  nonetheless, it seems likely that some smoothing/regularizing of $\bar{A}$ would be advantageous for finite sample sizes.  in particular, spectral and constrained estimates of latent vectors.  we can use any number of MR datasets, such as those MRN-111 in \cite{MIGRAINE}.
+
+
+\subsection{robust mean (eg, median, or Lq) estimation}
+
+we can again use the MRN-111 dataset, the theory is motivated by \cite{Ferrari2010a,Qin2013a}.
+
+
+\subsection{Clustering}
+
+using tensor factorizations \cite{Lee13a,Lee14a,Lee14b}, or DELTACON \cite{Koutra2013,Koutra2014}, which is just hclust with a different dissimilarity function.
+
+\subsection{errorbars around mean estimation, eg, estimation variance}
+ 
+bayesian nonparametric model \cite{Durante14a}
+
+
+\subsection{Canonical Cortical Circuits}
+
+tensor factorization of NKI-Enhanced \cite{Lee13a,Lee14a,Lee14b}.
+
+\section{connectome coding}
+
+
+\subsection{classifying connectomes}
+
+signal subgraphs paper \cite{signal-subgraph}, or using ASE or tensor factorization, followed by classical classification.
+
+\subsection{regressing connectomes}
+
+MRN114 via NTF followed by regression onto CCI
+
+\subsection{multivariate regression for connectomes}
+
+Adelstein \cite{Adelstein2011a} using JoFC on 5-factor personality test.
+
+
+\section{Discussion}
+
+general issues:
+
+\subsection{bias variance trade-off: num params $>$ num subjects}
+
+\subsection{nuisance signals: age, sex, batch}
+
+\subsection{Graph Matching}
+
+oh, which papers to list, how about \cite{VP11_FAQ,Fishkind2012a,sgm-jofc,Lyzinski2013}
+
+\subsection{Future Work}
+
+
+\section*{Acknowledgments}
+The author thanks the anonymous authors whose work largely
+constitutes this sample file. He also thanks the INFO-TeX mailing
+list for the valuable indirect assistance he received.
+ 
+ 
+\bibliography{../../../../other/latex/library}
+\bibliographystyle{IEEEtran}
+
+
+\end{document} 
+

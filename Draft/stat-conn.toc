@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Background}{2}{section.2}
+\contentsline {section}{\numberline {3}One Sample Tests}{2}{section.3}
+\contentsline {subsection}{\numberline {3.1}tests for model fit}{3}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}tests for independence between connectivity and vertex attributes (such as direction preference, excitatory vs. inhibitory, etc.)}{3}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}tests for independence between space and connectivity}{3}{subsection.3.3}
+\contentsline {section}{\numberline {4}2-sample tests for comparative connectomics}{3}{section.4}
+\contentsline {subsection}{\numberline {4.1}comparing 2 different connectomes}{3}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}2 populations of connectomes}{4}{subsection.4.2}
+\contentsline {section}{\numberline {5}Connectome Unsupervised Learning}{4}{section.5}
+\contentsline {subsection}{\numberline {5.1}mean estimation}{4}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}robust mean (eg, median, or Lq) estimation}{4}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Clustering}{4}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}errorbars around mean estimation, eg, estimation variance}{4}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Canonical Cortical Circuits}{4}{subsection.5.5}
+\contentsline {section}{\numberline {6}connectome coding}{4}{section.6}
+\contentsline {subsection}{\numberline {6.1}classifying connectomes}{4}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}regressing connectomes}{4}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}multivariate regression for connectomes}{4}{subsection.6.3}
+\contentsline {section}{\numberline {7}Discussion}{4}{section.7}
+\contentsline {subsection}{\numberline {7.1}bias variance trade-off: num params $>$ num subjects}{4}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}nuisance signals: age, sex, batch}{4}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Graph Matching}{4}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Future Work}{5}{subsection.7.4}
+\contentsline {section}{\numberline {8}Bibliography}{5}{section.8}
